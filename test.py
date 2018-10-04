@@ -1,8 +1,13 @@
 from telegram.ext import Updater
 from loggers import loggers
+import os
+
 logging=loggers.set_basic_logging()
 logging.info('hola')
 
 
-updater = Updater(token='619007291:AAHHj7HVZEKpVROuNUcACIJmS61iYwEYiGs')
+
+instatoken = os.environ.get('INSTATOKEN')
+
+updater = Updater(token= os.environ.get('INSTATOKEN'))
 dispatcher = updater.dispatcher
